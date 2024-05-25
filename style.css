@@ -1,0 +1,77 @@
+@charset "uft-8";
+
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 50px;
+  position: relative;
+}
+
+.img-1,
+.img-3 {
+  animation: bound 2s 2 linear,  rotate 3s 5s linear,shrink 2s 8.5s ease-in-out forwards;
+  transform-origin: bottom;
+}
+
+.img-2 {
+  animation: bound 2s 0.8s 2 linear,2s,rotate 3s 5s linear,shrink 2s 9.5s ease-in-out forwards;
+  transform-origin: bottom;
+}
+
+@keyframes bound {
+  30% {
+    transform: scale(1.1, 0.8) 
+  }
+
+  40% {
+    transform: scale(1) 
+  }
+
+  50% {
+    transform: scale(0.8, 1.1) translateY(-100px);
+  }
+
+  60% {
+    transform: scale(1) translateY(-200px);
+  }
+
+ 100% {
+    transform: scale(1) 
+  }
+}
+
+@keyframes rotate {
+0% {
+  transform: rotate(0deg);
+  transform-origin: center;
+ }
+
+ 45%,55% {
+  transform: rotate(360deg);
+  transform-origin: center;  
+ }
+
+ 100% {
+  transform: rotate(0deg);
+  transform-origin: center;  
+ }
+ }
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(0,0);
+
+  }
+}
+
